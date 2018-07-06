@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Button Schedule and SMS</title>
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	<link href="/font/qpFonts.css" rel="stylesheet" />
+	<script src="scripts/jquery-1.6.4.min.js"></script>
+	<script src="scripts/controller.js"></script>
+	<script src="scripts/servicebutton.js"></script>
+	<script src="scripts/keyboardinput.js"></script>
+	<script type="application/javascript" src="scripts/fastclick.js"></script>
+	<script type="text/javascript">
+        // The following function will be called when page has been loaded
+        $(function() {
+			// hook up widget client event
+			qmatic.webwidget.client.setOnLoaded(controller.onLoaded);
+			qmatic.webwidget.client.setOnLoadError(controller.onLoadError);
+		});
+    </script>
+</head>
+<body>
+	<div class="page" id="page1">
+		<div class="keyboardPosition">
+			<table border="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="center">
+							<div id="numKeyboard">
+								<table border="0">
+									<tbody>
+										<tr align="center">
+											<td align="center"><div id="key1" class="key keypad" onclick="addChar(this, '1')">1</div></td>
+											<td align="center"><div id="key2" class="key keypad" onclick="addChar(this, '2')">2</div></td>
+											<td align="center"><div id="key3" class="key keypad" onclick="addChar(this, '3')">3</div></td>
+										</tr>
+										<tr align="center">
+											<td align="center"><div id="key4" class="key keypad" onclick="addChar(this, '4')">4</div></td>
+											<td align="center"><div id="key5" class="key keypad" onclick="addChar(this, '5')">5</div></td>
+											<td align="center"><div id="key6" class="key keypad" onclick="addChar(this, '6')">6</div></td>
+										</tr>
+										<tr align="center">
+											<td align="center"><div id="key7" class="key keypad" onclick="addChar(this, '7')">7</div></td>
+											<td align="center"><div id="key8" class="key keypad" onclick="addChar(this, '8')">8</div></td>
+											<td align="center"><div id="key9" class="key keypad" onclick="addChar(this, '9')">9</div></td>
+										</tr>
+										<tr align="center">
+											<td align="center"><div id="key11" class="key keyremove" onclick="deleteChar(this)">&lt;</div></td>
+											<td align="center"><div id="key10" class="key keypad" onclick="addChar(this, '0')">0</div></td>
+											<td align="center"><div id="key12" class="key keyremove" onclick="clearChar(this)">C</div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+									<!--div id="alphaKeyboard">
+										<table border="0">
+											<tbody>
+												<tr align="center">
+													<td align="center"><div id="keyA" class="key keypad" onclick="addChar(this, 'A')">A</div></td>
+													<td align="center"><div id="keyB" class="key keypad" onclick="addChar(this, 'B')">B</div></td>
+													<td align="center"><div id="keyC" class="key keypad" onclick="addChar(this, 'C')">C</div></td>
+													<td align="center"><div id="keyD" class="key keypad" onclick="addChar(this, 'D')">D</div></td>
+													<td align="center"><div id="keyE" class="key keypad" onclick="addChar(this, 'E')">E</div></td>
+													<td align="center"><div id="keyF" class="key keypad" onclick="addChar(this, 'F')">F</div></td>
+
+												</tr>
+												<tr align="center">
+													<td align="center"><div id="keyG" class="key keypad" onclick="addChar(this, 'G')">G</div></td>
+													<td align="center"><div id="keyH" class="key keypad" onclick="addChar(this, 'H')">H</div></td>
+													<td align="center"><div id="keyI" class="key keypad" onclick="addChar(this, 'I')">I</div></td>
+													<td align="center"><div id="keyJ" class="key keypad" onclick="addChar(this, 'J')">J</div></td>
+													<td align="center"><div id="keyK" class="key keypad" onclick="addChar(this, 'K')">K</div></td>
+													<td align="center"><div id="keyL" class="key keypad" onclick="addChar(this, 'L')">L</div></td>
+
+												</tr>
+												<tr align="center">
+													<td align="center"><div id="keyM" class="key keypad" onclick="addChar(this, 'M')">M</div></td>
+													<td align="center"><div id="keyN" class="key keypad" onclick="addChar(this, 'N')">N</div></td>
+													<td align="center"><div id="keyO" class="key keypad" onclick="addChar(this, 'O')">O</div></td>
+													<td align="center"><div id="keyP" class="key keypad" onclick="addChar(this, 'P')">P</div></td>
+													<td align="center"><div id="keyQ" class="key keypad" onclick="addChar(this, 'Q')">Q</div></td>
+													<td align="center"><div id="keyR" class="key keypad" onclick="addChar(this, 'R')">R</div></td>
+												</tr>
+												<tr align="center">
+													<td align="center"><div id="keyS" class="key keypad" onclick="addChar(this, 'S')">S</div></td>
+													<td align="center"><div id="keyT" class="key keypad" onclick="addChar(this, 'T')">T</div></td>
+													<td align="center"><div id="keyU" class="key keypad" onclick="addChar(this, 'U')">U</div></td>
+													<td align="center"><div id="keyV" class="key keypad" onclick="addChar(this, 'V')">V</div></td>
+													<td align="center"><div id="keyW" class="key keypad" onclick="addChar(this, 'W')">W</div></td>
+													<td align="center"><div id="keyX" class="key keypad" onclick="addChar(this, 'X')">X</div></td>
+
+												</tr>
+												<tr align="center">
+													<td align="center"><div id="keyY" class="key keypad" onclick="addChar(this, 'Y')">Y</div></td>
+													<td align="center"><div id="keyZ" class="key keypad" onclick="addChar(this, 'Z')">Z</div></td>
+													<td align="center" colspan="4"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div--> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div> 
+	</div>
+</body>
+</html>

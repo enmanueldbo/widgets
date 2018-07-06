@@ -1,0 +1,59 @@
+
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:q="http://qmatic.com"
+ 		id="http://qmatic.com/widgets/buttonschedulesms"
+ 		version="7.0.2.02"
+        width="400"
+        height="400">
+        
+  <name>buttonschedulesms</name>
+  <name xml:lang="en">Button Schedule and SMS logic</name>
+  <description>Will show a button according to schedule and changes to SMS/Email input page in when needed</description>
+
+  <feature name="http://qmatic.com/features/touchprinter-widget" required="true"/>
+  <feature name="http://qmatic.com/features/orchestra-connector" required="true"/>
+
+  <content src="index.html"/>
+  <icon src="images/icon.png"/>  
+  <access origin="*"/>  
+  <author>Bouwdewijn van Duijn/Annette Bollmann</author>
+  <licence>Copyright (c) Qmatic</licence>
+
+  <q:standalone>false</q:standalone>
+ <!-- inactivity info -->
+  <q:attribute type="image" key="btn.inact.img" name="btn.inact.img" description="btn.inact.img.description"></q:attribute>
+  <q:attribute type="boolean" key="btn.hide" name="btn.hide" description="btn.hide.description" defaultValue="false"></q:attribute>
+  <q:attribute type="page" key="page.inact.name" name="page.inact.name" description="page.inact.description"></q:attribute>
+  <q:attribute type="page" key="page.max.name" name="page.max.name" description="page.max.description"></q:attribute>
+
+  <!-- background color -->
+  <q:attribute type="color" key="bg.color" name="bg.color" description="bg.color.description" defaultValue="transparent"></q:attribute>
+  <!-- Keyboard Text Font and colour -->
+  <q:attribute type="font" key="text.font" name="text.font" description="text.font.description" defaultValue="Helvetica;36px;normal;normal"></q:attribute>
+  <q:attribute type="color" key="text.color" name="text.color" description="text.color.description" defaultValue="#000000"></q:attribute>
+  <q:attribute type="image" key="key.image" name="key.image" description="key.image.description"></q:attribute>
+  <q:attribute type="image" key="keydel.image" name="keydel.image" description="keydel.image.description"></q:attribute>
+  <!-- Texts -->
+  <q:attribute type="string" key="add.btn.element" name="add.btn.element" description="add.btn.description" ></q:attribute>  
+  <q:attribute type="string" key="skip.btn.element" name="skip.btn.element" description="skip.btn.description" ></q:attribute>  
+  <q:attribute type="string" key="skip2.btn.element" name="skip2.btn.element" description="skip2.btn.description" ></q:attribute>  
+  <q:attribute type="string" key="input.element" name="input.element" description="input.element.description" ></q:attribute>  
+
+  <q:attribute type="integer" key="max.input" name="max.input" description="max.input.description" defaultValue="10"></q:attribute>  
+  <q:attribute type="integer" key="min.input" name="min.input" description="min.input.description" defaultValue="9"></q:attribute> 
+  <q:attribute type="page" key="page.input.name" name="page.input.name" description="page.input.description"></q:attribute> 
+   
+
+  <q:attribute type="enumlist" key="visit.field" name="visit.field" description="visit.field.description">
+	<q:enum name="phoneNumber" value="phoneNumber"/>
+	<q:enum name="custom1" value="custom1"/>
+	<q:enum name="custom2" value="custom2"/>
+	<q:enum name="custom3" value="custom3"/>
+	<q:enum name="custom4" value="custom4"/>
+	<q:enum name="custom5" value="custom5"/>
+  </q:attribute>
+  <q:attribute type="string" key="country.code" name="country.code" description="country.code.description" ></q:attribute>  
+  <!--q:attribute type="string" key="queue.map" name="queue.map" description="queue.map.description" ></q:attribute-->  
+  <!--q:attribute type="boolean" key="print.ticket" name="print.ticket" description="print.ticket.description" default="true" ></q:attribute-->     
+  <!--q:attribute type="String" key="no.print.fieldname" name="no.print.fieldname" description="no.print.fieldname.description" default="custom5" ></q:attribute-->
+  <!--q:attribute type="boolean" key="always.offer.sms" name="always.offer.sms" description="always.offer.sms.description" default="custom5" ></q:attribute-->
+</widget>
